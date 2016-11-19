@@ -5,36 +5,20 @@ package com.company;
  */
 public class Course {
 
-    public int count = 0;
-    private String name;
-    private String address;
     private Student[] students;
     private Teacher teacher;
+    private String courseName;
 
-    public void setName (String abc) {
-        name = abc;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public String getName () {
-        return name;
-    }
-
-    public void setAddress (String add) {
-        address = add;
-    }
-
-    public String getAddress () {
-        return address;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public void setStudents(Student[] students) {
-        this.students = students(count);
-        count++;
-    }
-
-    public Student[] students(int count) {
-        students = new Student[count++];
-        return this.students;
+        this.students = students;
     }
 
     public Student[] getStudents() {
@@ -49,8 +33,25 @@ public class Course {
         this.teacher = teacher;
     }
 
-    public void printDetails(Student[] s, Teacher t) {
-        System.out.println("Students enrolled in the course = " + s);
-        System.out.println("Teacher assigned to conduct the course = " + t);
+    public void printDetails() {
+        //System.out.println(students.length);
+        System.out.println("Students enrolled in the course: \n");
+        for (int i = 0; i < students.length; i++) {
+            //System.out.println(students[i]+"");
+            System.out.println("Name: " + students[i].getName());
+            System.out.println("Roll No.: " + students[i].getRollNo());
+            System.out.println("Address: " + students[i].getAddress());
+            System.out.println("GPA: " + students[i].getGPA());
+            if (students[i].getCourse().length > 0) {
+                for (int j = 0; j < students[i].getCourse().length; j++) {
+                    System.out.println("Courses enrolled in: " + students[i].getCourse()[j].getCourseName());
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("Teacher assigned to conduct the course: \nName: " + teacher.getName());
+        System.out.println("Address: " + teacher.getAddress());
+        System.out.println("Telephone No.: " + teacher.getTelephoneNo());
+        System.out.println("Degree: " + teacher.getDegree());
     }
 }

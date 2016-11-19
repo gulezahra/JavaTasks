@@ -5,8 +5,34 @@ package com.company;
  */
 public class Teacher extends Course {
 
+    private String name;
+    private String address;
     private int telephoneNo;
     private String degree;
+
+
+    public Teacher(String name, String address, int telephoneNo, String degree) {
+        this.name = name;
+        this.address = address;
+        this.telephoneNo = telephoneNo;
+        this.degree = degree;
+    }
+
+    public void setName(String abc) {
+        name = abc;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAddress(String add) {
+        address = add;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 
     public int getTelephoneNo() {
         return telephoneNo;
@@ -24,15 +50,10 @@ public class Teacher extends Course {
         this.degree = degree;
     }
 
-    public void printDetails (String nameOfCourse, Teacher teacher) {
+    /*public void printDetails(String nameOfCourse, Teacher teacher) {
         String teacherName = getName();
         String teacherAddress = getAddress();
         int teacherTelephoneNo = getTelephoneNo();
         String teacherDegree = getDegree();
-        System.out.println("Course Name = " + nameOfCourse + "\n");
-        System.out.println("Teacher assigned to conduct the course :-\n\nTeacher's name: " + teacherName);
-        System.out.println("Address: " + teacherAddress);
-        System.out.println("Telephone No.: " + teacherTelephoneNo);
-        System.out.println("Degree : " + teacherDegree);
-    }
+    }*/
 }
